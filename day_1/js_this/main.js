@@ -112,10 +112,10 @@ const coffeeShop = {
     beans: 40,
     money:100,
     drinkRequirements: {
-      latte: 10,
-      americano: 5,
-      doubleShot: 15,
-      frenchPress: 12
+      latte: {beanRequirement: 10, price: 5},
+      americano: {beanRequirement: 5, price: 2.5},
+      doubleShot: {beanRequirement: 15, price: 7.5},
+      frenchPress: {beanRequirement: 12, price: 10},
     },
   
     makeDrink: function (drinkType) {
@@ -123,14 +123,18 @@ const coffeeShop = {
         if(!(this['drinkRequirements'].hasOwnProperty(drinkType))){
         return alert(`Sorry, we don't make ${drinkType} Beans' status: ${this.beans}`)
         }
-        if(this.beans > this.drinkRequirements[drinkType]){
+        if(this.beans > this.drinkRequirements[drinkType].beanRequirement){
 
         console.log(`Enjoy your ${drinkType} Beans' status: ${this.beans}`);
-        this.beans -= this.drinkRequirements[drinkType];
+        this.beans -= this.drinkRequirements[drinkType].beanRequirement;
         console.log(`Beans' status: ${this.beans}`);
         } else {
             console.log(`sorry can't make ${drinkType}, we're all out of beans(${this.beans})`)
         }
+    },
+    buyDrink: function(drinkType){
+        this.money += this.drinkRequirements[drinkType].price; 
+        this.makeDrink(drinkType);
     },
     buyBeans: function(numBeans) {
       this.beans += (40 * numBeans); 
@@ -139,12 +143,12 @@ const coffeeShop = {
     }
   }
   
-  coffeeShop.makeDrink("latte"); 
-  coffeeShop.makeDrink("americano");
-  coffeeShop.makeDrink("filtered"); //should alert/console "Sorry, we don't make filtered"
-  coffeeShop.makeDrink("doubleShot");    
-  coffeeShop.makeDrink("frenchPress"); //should alert/console "Sorry, we're all out of beans"
-  coffeeShop.buyBeans(2);
-  coffeeShop.makeDrink("frenchPress"); //should alert/console "Sorry, we're all out of beans"
+  // coffeeShop.makeDrink("latte"); 
+  // coffeeShop.makeDrink("americano");
+  // coffeeShop.makeDrink("filtered"); //should alert/console "Sorry, we don't make filtered"
+  // coffeeShop.makeDrink("doubleShot");    
+  // coffeeShop.makeDrink("frenchPress"); //should alert/console "Sorry, we're all out of beans"
+  // coffeeShop.buyBeans(2);
+  coffeeShop.buyDrink("frenchPress"); //should alert/console "Sorry, we're all out of beans"
 //Extension 1
 
