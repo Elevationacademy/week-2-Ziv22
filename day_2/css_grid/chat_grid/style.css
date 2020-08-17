@@ -1,0 +1,94 @@
+body{
+    margin:0;
+}
+#container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 14fr 1fr;
+    grid-template-areas:
+     "l c" 
+     "l f";
+}
+#friends-nav{
+    grid-area: l;
+    background-color: rgb(118, 61, 175);
+    display: grid;
+    padding: 5px;
+}
+
+.friends{
+    height:3vh;
+    display: grid;
+    align-items: center;
+    justify-items: left;
+    padding: 5px;
+    background-color: rgba(252, 249, 249, 0.342);;
+}
+
+#chat{
+    grid-area: c;
+    background-color: whitesmoke;
+}
+#message-section{
+    grid-area: f;
+    background-color: white;
+    color:lightgrey;
+    display: grid;
+    grid-template-columns: 4fr 1fr;   
+    align-items: center;
+}
+
+#send{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: rgb(118, 61, 175);
+    color:white;
+    height: 100%;
+}
+#text-box{
+    display: grid;
+    justify-items: left;
+    align-items: center;
+    background-color: white;
+    color:lightgray;
+    height: 100%;
+    padding-left:5px;
+}
+
+#chat{
+    display: grid;
+}
+
+.message {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-family: 'Dancing Script', cursive;
+    height: 8vh;
+    max-width:fit-content;
+    align-items: center;    
+    margin:20px;
+    padding-left:5px;
+    
+}
+
+.time{
+    font-size: 10px;
+    justify-self: right;
+    align-self: self-end;
+    padding-right: 4px;
+    padding-bottom: 4px;
+}
+
+.self{
+    display: grid;
+    justify-items: right;
+    justify-self: right;
+    background-color: rgb(98, 241, 98);
+}
+
+.other{
+    background-color: rgb(211, 210, 210);
+}
+     
