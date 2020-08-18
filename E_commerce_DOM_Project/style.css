@@ -1,45 +1,75 @@
-.navOps {
-    position: relative;
-    margin-right: 20px;
-    display: inline-block;
-}
-
-#navbar{
-    display: block;
-    background-color: rgb(27,106,176);
-    color:white;
-    line-height:2.5;
-    padding: 2px;
-    height:40px;
-    padding-left: 21%;
-    border-top: 20px solid rgb(37, 39, 36);
-    border-bottom: 20px solid rgb(37, 39, 36);
-    font-size: large;
-}
 body{
     margin:0;
-    height: 850px;
     background-color: #f5f5f5;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: large;
+    font-size: 1.2em;
 }
+
 #container{
     background-color: white;
     color:black;
-    width:58%;
-    height: 100%;
-    padding: 1%;
-    padding-top: 0.2%;
-    margin-left: 20%;
+    height: 100vh;
+    /* margin-left: 20vw; */
+    display: grid;
+    grid-template-areas:
+    "n n" 
+    "d d";
+    grid-template-rows: 3fr 5fr;
+}
+
+#nav-container{
+    grid-area: n;
+    width:100vw;
+    font-size: large;
+    display: grid;
+    grid-template-columns: 3fr 6fr;
+    align-items: center;
+    background-color: rgb(27,106,176);
+    color:white;
+}
+#logo{
+    padding-left: 2em;
+}
+
+#nav-options{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    max-width: fit-content;
+}
+.navOps{
+    margin-left: 10px;
 }
 .navOps:hover {
     color: whitesmoke;
     text-decoration: underline;
     cursor: pointer;
 }
-.visible{
-    display:block;
+#data{
+    grid-area: d;
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    padding-left: 2em;
 }
-.invisible{
-    display:none;
+.pages{
+    display: grid;
+    grid-template-areas:
+    "t . ."
+    "c c c ";
+}
+.page-title{
+    grid-area: c;
+}
+#all-products-page{
+    width:100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+.product-container{
+    display: grid;
+    grid-row: 5fr 1fr 1fr;
+}
+.product-image{
+    width:5vw;
+    height: auto;
 }

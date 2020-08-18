@@ -15,6 +15,7 @@ body{
     background-color: rgb(118, 61, 175);
     display: grid;
     padding: 5px;
+    font-family: 'Anton', sans-serif;
 }
 
 .friends{
@@ -23,6 +24,8 @@ body{
     align-items: center;
     justify-items: left;
     padding: 5px;
+    font-family: 'Anton', sans-serif;
+font-family: 'Lobster', cursive;
     background-color: rgba(252, 249, 249, 0.342);;
 }
 
@@ -63,6 +66,7 @@ body{
 
 .message {
     display: grid;
+    border-radius: 5px;
     grid-template-columns: 1fr 1fr;
     font-family: 'Dancing Script', cursive;
     height: 8vh;
